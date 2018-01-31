@@ -1,0 +1,24 @@
+//html部分：
+ <div id="demo1">
+          <!-- input加上v-model 后会影响 input的value属性，浏览器上通过
+           console.log($("input[placeholder=edit]").val())获取value属性值得到的是空字符串， 
+           method中的方法是自己写的V-model的具体实现方法，实际上用v-model实现绑定不需要写metohd的方法. -->
+                 
+         	<input placeholder="edit" value="Hello world!" v-on:keyup="sip">
+       		<p>Message is: {{information}}</p>
+	</div>
+	
+//javascript部分：
+  var app = new Vue({
+      el:"#demo",
+      data:{
+            information:""
+      },
+      methods:{
+      sip:function(event){
+      				this.information = $("input[placeholder=edit]").val();
+              			//或者用下面的这条代码也能实现.
+  						// this.information = event.target.value;
+        }
+      }
+ })
