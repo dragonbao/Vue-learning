@@ -23,7 +23,7 @@
         /* ==========总容器样式设置=========*/
         .container{
             width: 400px;
-            height: 800px;
+            height: 500px;
             background: rgb(219, 199, 199);
             margin: 20px;
         }
@@ -42,6 +42,7 @@
             border: 0;
             margin: 15px 0;
             margin-right:5px;
+            text-align: center;
             outline: none;
             box-sizing: border-box;
             border-radius:5px;
@@ -61,11 +62,30 @@
             transition: box-shadow .3s;
         }
         .searchbox input[type="button"]:hover{
+            cursor: pointer;
+            background: lightyellow;
             box-shadow: 0 2px 25px 2px #CCCCCC  ;
         }
         /* =====伪装select的list元素样式======= */
         .list{
+            width: 80%;
+            /* margin: 20px 0; */
+            height: 335px;
+            text-align: center;
+            border-radius: 5px;
+
+        }
+        .list li{
+            margin: 5px;
             width: auto;
+            line-height: 50px;
+            height: 50px;
+            border-radius: 5px;
+            background: #CCFFFF ;
+            cursor:pointer;
+        }
+        .list li:hover{
+            background:linear-gradient( to right,rgba(204,255,204,0),rgba(204,255,204,1));
         }
     </style>
 </head>
@@ -96,5 +116,28 @@ option的序号从0开始.
 2:alert(options.val());   //拿到选中项的值
 
 3:alert(options.text());   //拿到选中项的文本 -->
+<script type="text/javascript">
+    window.onload =function(){
+        var select = document.getElementsByClassName("list")[0];
+        var search = document.getElementsByClassName("keywords")[0];
+        select.onclick=function(e){
+            var event = window.event||e;
+            var target = event.target||srcElement;
+            // if(target.)
+            // console.log(target.tagName);
+            // search.value = target.innerHTML;
+            target.tagName.toUpperCase() ==="LI" ?search.value = target.innerHTML:"";
+            // search.value = target.innerHTML;
+        }
+        var arr = new Array(1,2,3,4,5,6);
+        
+        arr.forEach(function(value,index,arr){
+            console.log(value);// 1 2 3 4 5 6 
+            console.log(index);//0 1 2 3 4 5
+            console.log(arr);   // array
+            
+        })
+    }
+</script>
 </body>
 </html>

@@ -1,0 +1,81 @@
+*{
+    margin: 0;
+    padding: 0;
+
+}
+.demo-box{
+    width: auto;
+    height: 200px;
+    background: #ccc;
+    overflow: scroll;
+}
+ul{
+    list-style: none;
+}
+/* ==========总容器样式设置=========*/
+.container{
+    width: 400px;
+    height: 500px;
+    background: rgb(219, 199, 199);
+    margin: 20px;
+}
+/* ==========搜索栏总体样式========= */
+.searchbox{
+    width: auto;
+    overflow: hidden;
+    font-size: 0;
+    height: 80px;
+    background: linear-gradient(to right,rgba(51,255 ,204,0),rgba(51, 255 ,204,1));
+}
+/* ==========输入框的样式=========== */
+.keywords{
+    width: calc(100% - 77px);
+    height:50px; 
+    border: 0;
+    margin: 15px 0;
+    margin-right:5px;
+    text-align: center;
+    outline: none;
+    box-sizing: border-box;
+    border-radius:5px;
+    border: 1px solid #990066 ;
+}
+/* =========搜索按钮的样式============ */
+.searchbox input[type="button"]{
+    box-sizing: border-box;
+    width: 70px;
+    height: 50px;
+    margin: 15px 0;
+    background: lightseagreen;
+    outline: none;
+    font-size: 18px;
+    border-radius:5px;
+    border: 0;
+    transition: box-shadow .3s;
+}
+.searchbox input[type="button"]:hover{
+    cursor: pointer;
+    background: lightyellow;
+    box-shadow: 0 2px 25px 2px #CCCCCC  ;
+}
+/* =====伪装select的list元素样式======= */
+.list{
+    width: 80%;
+    /* margin: 20px 0; */
+    height: 335px;
+    text-align: center;
+    border-radius: 5px;
+
+}
+.list li{
+    margin: 5px;
+    width: auto;
+    line-height: 50px;
+    height: 50px;
+    border-radius: 5px;
+    background: #CCFFFF ;
+    cursor:pointer;
+}
+.list li:hover{
+    background:linear-gradient( to right,rgba(204,255,204,0),rgba(204,255,204,1));
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>slot内容分发</title>
+    <script type="text/javascript" src="./js/vue.js"></script>
+    <style type="text/css">
+        /* *{
+            margin: 0;
+            padding: 0;
+        } */
+    </style>
+</head>
+
+<body>
+    <div class="box1">
+        <p>{{message}}</p>
+        <my-component>
+            <p>父组件的第一条slot内容</p>
+            <p>父组件的第二条slot内容</p>
+            <p>父组件的第三条slot内容</p>
+            <p>父组件的第四条slot内容</p>
+        </my-component>
+    </div>
+    <script type="text/javascript">
+        window.onload = function () {
+            var vm = new Vue({
+                el: ".box1",
+                data: {
+                    message: "我的自定义组件",
+                },
+                components: {
+                    "myComponent": {
+                        template: `
+                    <div>
+                        <slot>
+                        <p>子组件第一条信息</p>
+                        </slot>
+                        
+                        <p>子组件第二条信息</p>
+                        <p>子组件第三条信息</p>
+                        <p>子组件第四条信息</p>
+                        
+                    </div>
+                      
+                    `
+                    },
+                }
+            })
+        }    
+    </script>
+</body>
+
+</html>
